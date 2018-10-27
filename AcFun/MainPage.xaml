@@ -8,13 +8,80 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+
+
+
+
+
+
     <Grid>
         <Pivot >
             <PivotItem Header="首页"   >
+
                 <Grid >
-                    
+                    <StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="260"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="508"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <FlipView Name="Flip" Width="508" Height="260" HorizontalAlignment="Left" Grid.Column="0" >
+                            <FlipView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Image  Source="{Binding Image}"   Stretch="Fill"   />
+
+                                        <Border Background="#88000000" Height="20" VerticalAlignment="Bottom">
+                                            <TextBlock Text="{Binding Name}" VerticalAlignment="Bottom" Foreground="White"/>
+                                        </Border>
+                                    </Grid>
+
+
+                                </DataTemplate>
+
+                            </FlipView.ItemTemplate>
+                        </FlipView>
+
+
+                            <GridView Name="gridview" SelectionMode="None" IsItemClickEnabled="True" Grid.Column="1" Margin="8,0,0,0"  >
+                                <GridView.ItemTemplate >
+                                    <DataTemplate>
+                                        <Grid >
+
+
+
+                                            <Image Height="128" Name="fm" Source="{Binding Image}" Width="216"  Stretch="Fill"  />
+
+                                                <Border Background="#88000000" Height="20" VerticalAlignment="Bottom">
+                                                    <TextBlock Text="{Binding Name}" VerticalAlignment="Bottom" Foreground="White"/>
+                                                </Border>
+
+                                           
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridView.ItemTemplate>
+                            </GridView>
+                        </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </StackPanel>
                 </Grid>
-                
             </PivotItem>
             <PivotItem Header="番剧索引">
                 <Grid >
