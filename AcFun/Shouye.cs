@@ -30,7 +30,7 @@ namespace AcFun
             //httpget返回的是html文档
 
             Stream stream = (await result.Content.ReadAsInputStreamAsync()).AsStreamForRead();
-            StreamReader streamReader = new System.IO.StreamReader(stream, Encoding.UTF8);
+            StreamReader streamReader = new System.IO.StreamReader(stream, Encoding.UTF8);//防止乱码
             var str = streamReader.ReadToEnd();
 
 
@@ -40,9 +40,31 @@ namespace AcFun
 
         }
 
+
+        /// <summary>
+        /// 推荐信息
+        /// </summary>
+        /// <param name="hid">HID</param>
+        /// <param name="part">分p号(从0开始)</param>
+        /// <returns></returns>
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
- }
+}
 
 
 
